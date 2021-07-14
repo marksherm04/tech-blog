@@ -1,6 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// importing package to secure password on creation
+const bcrypt = require('bcrypt');
+
 // create User model
 class User extends Model { }
 
@@ -41,6 +44,18 @@ User.init(
 		}
 	},
 	{
+		hooks: {
+			// creates hash password right before new User is created
+			async beforeCreate(newUserData) {
+				newUserData.password = await bcrypt.hash(newUserData.password, 10);
+				return newUserData;
+			},
+			// adds new bcrypt when password is updated
+			async beforeUpdate(updatedUserData) {
+				updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+				return updatedUserData;
+			}
+		},
 		// TABLE CONFIGURATION OPTIONS 
 		sequelize,
 		// don't automatically create createdAt/updatedAt timestamp fields
@@ -53,4 +68,5 @@ User.init(
 		modelName: 'user'
 	}
 );
+
 module.exports = User;
