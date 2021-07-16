@@ -4,7 +4,6 @@ const { sequelize } = require('../../models/User');
 
 // get all users
 router.get('/', (req, res) => {
-	console.log('==============');
 	Post.findAll({
 		// query configuration
 		attributes: ['id', 'post_url', 'title', 'created_at'],
@@ -39,6 +38,15 @@ router.get('/:id', (req, res) => {
 		},
 		attributes: ['id', 'post_url', 'title', 'created_at'],
 		include: [
+			{
+				model: Comment,
+				attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+				incldue: {
+					model: User,
+					attributes: ['username']
+				}
+
+			},
 			{
 				model: User,
 				attributes: ['username']

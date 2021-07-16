@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 
 // GET /api/users
 router.get('/', (req, res) => {
@@ -18,7 +18,8 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
 	User.findOne({
 		attributes: { exclude: ['password'] },
-		where: { id: req.params.id 
+		where: {
+			id: req.params.id
 		},
 		include: [
 			{
@@ -39,6 +40,7 @@ router.get('/:id', (req, res) => {
 		.then(dbUserData => {
 			if (!dbUserData) {
 				res.status(400).json({ message: 'No user found with this id' });
+				return;
 			}
 			res.json(dbUserData);
 		})
