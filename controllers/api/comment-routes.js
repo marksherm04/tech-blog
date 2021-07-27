@@ -30,6 +30,7 @@ router.post('/', (req, res) => {
 
 // delete comment
 router.delete('/:id', (req, res) => {
+	if (req.session) {
 	Comment.destroy({
 		where:
 		{
@@ -47,6 +48,7 @@ router.delete('/:id', (req, res) => {
 			console.log(err);
 			res.status(500).json(err);
 		});
+	}
 });
 
 module.exports = router;
