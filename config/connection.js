@@ -4,8 +4,6 @@ const Sequelize = require('sequelize');
 // data in .env will be made available without a variable
 require('dotenv').config();
 
-let sequelize;
-
 // create connection to database, pass in mySQL username and password and hide the info in .env
 let sequelize;
 
