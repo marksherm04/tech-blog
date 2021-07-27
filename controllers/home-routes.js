@@ -82,7 +82,10 @@ router.get('/post/:id', (req, res) => {
 			const post = dbPostData.get({ plain: true });
 
 			// pass data to template for user post
-			res.render('user-post', { post });
+			res.render('user-post', { 
+				post,
+				loggedIn: req.session.loggedIn
+			 });
 		})
 		.catch(err => {
 			console.log(err);
