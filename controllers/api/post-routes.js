@@ -41,18 +41,10 @@ router.get('/:id', (req, res) => {
 			{
 				model: Comment,
 				attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-<<<<<<< HEAD:routes/api/post-routes.js
 				include: {
 					model: User,
 					attributes: ['username']
 				}
-=======
-				incldue: {
-					model: User,
-					attributes: ['username']
-				}
-
->>>>>>> develop:controllers/api/post-routes.js
 			},
 			{
 				model: User,
