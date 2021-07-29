@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
 			// Post model
 			{
 				model: Post,
-				attributes: ['id', 'title', 'post_url', 'created_at']
+				attributes: ['id', 'title', 'post_content', 'created_at']
 			},
 			// Comment model
 			{
