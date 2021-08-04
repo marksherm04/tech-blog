@@ -20,7 +20,7 @@ This is a full stack application that allows users to communicate and discussion
 npm install, npm install dotenv and add an .env file with DB_NAME: DB_USER: and DB_PW: (password) to run the application
 
 ## Screenshot
-
+<img width="1969" alt="Screen Shot 2021-08-04 at 6 22 33 PM" src="https://user-images.githubusercontent.com/81338255/128262995-f1e061b3-25d2-42af-afab-a1cf6db5d92a.png">
 
 ## Contributing
 Mark Sherman
