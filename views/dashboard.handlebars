@@ -1,36 +1,47 @@
-<section>
-  <h2>Create New Post</h2>
+<div class="card">
+  <div class="card-body bg-secondary text-white">
+    <section>
+      <h2>Create New Post</h2>
 
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label for="post-content">Content</label>
-      <input id="post-content" name="post-content" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-</section>
+      <form class="new-post-form">
+        <div>
+          <label for="post-title">Title</label>
+          <input type="text" id="post-title" name="post-title" />
+        </div>
+        <div>
+          <label for="post-content">Content</label>
+          <input id="post-content" name="post-content" />
+        </div>
+        <button type="submit" class="btn-primary">Create</button>
+      </form>
+    </section>
+  </div>
+</div>
+<br>
 
 {{#if posts.length}}
+<div class="card">
+  <div class="card-body bg-secondary text-white">
 <section>
   <h2>My Posts</h2>
+  <br>
 
-  {{#each posts as |post|}}
+    {{#each posts as |post|}}
 
   <h3> {{title}} </h3>
 
   <p>{{post_content}}</p>
+  <br>
 
   <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
-
-  
 
   {{/each}}
 
 </section>
+</div>
+</div>
 {{/if}}
+
+
 
 <script src="/javascript/add-post.js"></script>

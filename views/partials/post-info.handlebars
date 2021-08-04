@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card mb-6">
 	<header class="card-title">
 		<div class="column">
 			<a href="/post/{{id}}">{{title}}</a>
@@ -7,14 +7,13 @@
 			Posted By: {{user.username}} on {{format_date created_at}}
 		</div>
 	</header>
-</div>
-
-<div class="card-body mb-6">
-	<p class="card-text">{{post_content}}</p>
-	
-<article class="post">
-	<div>
-		<a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comment.length}}</a>
+	<div class="card-body mb-6 text-primary">
+		<p class="card-text">{{post_content}}</p>
 	</div>
-</article>
+	
 </div>
+<article class="post">
+		<div>
+			<a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comment.length}}</a>
+		</div>
+	</article>

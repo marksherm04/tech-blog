@@ -41,6 +41,15 @@
 	padding-left: 1rem;
       }
 
+      h2 {
+	      text-decoration: underline;
+      }
+      
+      h3 {
+	      font-size: 22px;
+	      color: black;
+      }
+
       #logout {
 	      color: yellow;
       }
@@ -154,8 +163,6 @@
 	margin: -1.5% 0 2% 0;
       }
       
-    
-    
       .comment-form {
 	margin-bottom: 5%;
       }
