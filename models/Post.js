@@ -4,6 +4,8 @@ const sequelize = require('../config/connection');
 // creating Post model
 class Post extends Model {}
 
+// May have to add code in above for Post extends Model {}
+
 // creating columns for Post model
 Post.init(
 	{
@@ -17,11 +19,11 @@ Post.init(
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		post_url: {
+		post_content: {
 			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
-				isURL: true
+				len: [1]
 			}
 		},
 		user_id: {

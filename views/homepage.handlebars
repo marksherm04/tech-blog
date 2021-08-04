@@ -1,20 +1,7 @@
 <ol class="post-list">
   {{#each posts as |post|}}
-  <li>
-    <article class="post">
-      <div class="title">
-        <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
-        <span>({{post.post_url}})</span>
-      </div>
-      <div class="meta">
-	      {{!-- May need to use some of these below for the user that made the post --}}
-
-        {{!-- {{vote_count}} point(s) by {{user.username}} on
-        {{created_at}}
-        | --}}
-        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-      </div>
-    </article>
-  </li>
+  
+    {{> post-info post }}
+  
   {{/each}}
 </ol>

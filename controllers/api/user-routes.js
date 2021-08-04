@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
 			// Post model
 			{
 				model: Post,
-				attributes: ['id', 'title', 'post_url', 'created_at']
+				attributes: ['id', 'title', 'post_content', 'created_at']
 			},
 			// Comment model
 			{
@@ -76,7 +76,6 @@ router.post('/', (req, res) => {
 
 router.post('/login', (req, res) => {
 	// Query operation
-	// expects {email: 'john1@gmail.com', password: 'password!'}
 	User.findOne({
 		where: {
 			email: req.body.email
@@ -118,8 +117,6 @@ router.post('/logout', (req,res) => {
 
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
-	// expects {'Username: 'john1', email: 'john1@gmail.com', password: 'password!'}
-
 	// if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
 	User.update(req.body, {
 		individualHooks: true,
