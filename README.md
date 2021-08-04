@@ -10,7 +10,7 @@ This is a full stack application that allows users to communicate and discussion
   ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
-- [Usage](#usage)
+- [Screenshot](#screenshot)
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [License](#license)
