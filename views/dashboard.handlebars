@@ -22,23 +22,22 @@
 {{#if posts.length}}
 <div class="card">
   <div class="card-body bg-secondary text-white">
-<section>
-  <h2>My Posts</h2>
-  <br>
+    <section>
+      <h2>My Posts</h2>
+      <br>
 
-    {{#each posts as |post|}}
+      {{#each posts as |post|}}
 
-  <h3> {{title}} </h3>
+      <h3> {{title}} </h3>
 
-  <p>{{post_content}}</p>
-  <br>
+      <p>{{post_content}}</p>
 
-  <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
 
-  {{/each}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
 
-</section>
-</div>
+      {{/each}}
+    </section>
+  </div>
 </div>
 {{/if}}
 
